@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Day of the week -->
+        <EditText
+            android:id="@+id/editTextDayOfWeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter day of the week"
+            android:minHeight="48dp"/>
+
+        <!-- Time of course -->
+        <EditText
+            android:id="@+id/editTextTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter time of course"
+            android:minHeight="48dp"/>
+
+        <!-- Capacity -->
+        <EditText
+            android:id="@+id/editTextCapacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Enter capacity"
+            android:minHeight="48dp"/>
+
+        <!-- Duration -->
+        <EditText
+            android:id="@+id/editTextDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter duration"
+            android:minHeight="48dp"/>
+
+        <!-- Price per class -->
+        <EditText
+            android:id="@+id/editTextPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Enter price"
+            android:minHeight="48dp"/>
+
+        <!-- Type of class -->
+        <EditText
+            android:id="@+id/editTextType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter type of class"
+            android:minHeight="48dp"/>
+
+        <!-- Description -->
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter description"
+            android:minHeight="48dp"/>
+
+        <!-- Additional fields -->
+        <!-- Add more TextView and EditText elements for any additional fields -->
+
+        <!-- Submit button -->
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"/>
+
+    </LinearLayout>
+</ScrollView>
