@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
 
 
 
-    // Replace with your adapter class name
+
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ClassListAdapter
@@ -131,7 +131,7 @@ class MainActivity : ComponentActivity() {
         uploadButton.setOnClickListener {
             // Call the function to retrieve classList from the database or wherever it's stored
             val userId = "001285364" // Replace with actual user ID
-            val classList = getClassListFromDatabase() // Implement this function to fetch class list
+            val classList = getClassListFromDatabase()
 
             // Create JSON payload
             val jsonPayload = createJSONPayload(userId, classList)
@@ -164,10 +164,10 @@ class MainActivity : ComponentActivity() {
     private fun getClassListFromDatabase(): List<ClassModel> {
         val classList = mutableListOf<ClassModel>()
 
-        // Assuming dbHelper is your DatabaseHelper
+
         val db = dbHelper.readableDatabase
 
-        // Query your database to retrieve class information
+        // Query  database to retrieve class information
         val cursor = db.query(
             DatabaseHelper.DATABASE_TABLE_COURSES,
             null,
@@ -218,24 +218,22 @@ class MainActivity : ComponentActivity() {
                 body = jsonPayload
                 headers.append("Content-Type", "application/json")
                 headers.append("Accept", "application/json")
-                // Add other headers if required
+
             }
 
             // Check the response status code
             if (response.status.isSuccess()) {
                 val responseBody = response.readText()
-                // Handle the successful response
-                // You can parse responseBody if it's JSON or handle it accordingly
+
             } else {
-                // Handle unsuccessful response
-                // For example:
+
                 val errorMessage = "Failed to upload data. Status code: ${response.status}"
                 // Display an error message to the user or log it
             }
         } catch (e: Exception) {
-            // Handle exceptions if any occurred during the request
+
             val errorMessage = "Exception: ${e.message}"
-            // Display an error message to the user or log it
+
         } finally {
             client.close() // Close the client when finished
         }
@@ -343,8 +341,8 @@ class MainActivity : ComponentActivity() {
             dbHelper.insertClassInstanceWithTeacher(classId, date, teacher)
 
             if (date.isNotEmpty() && teacher.isNotEmpty()) {
-                // Uncomment this code to add an instance when both fields are filled
-                // dbHelper.insertClassInstanceWithTeacher(classId, date, teacher)
+
+                dbHelper.insertClassInstanceWithTeacher(classId, date, teacher)
                 Toast.makeText(this, "Class instance added", Toast.LENGTH_SHORT).show()
             } else {
                 if (date.isEmpty()) {
@@ -416,6 +414,7 @@ class MainActivity : ComponentActivity() {
                 )
             ) {
                 saveToDatabase(dayOfWeek, time, capacity, duration, price, type, description)
+
             } else {
                 showToast("Please fill all fields")
             }
@@ -466,6 +465,8 @@ class MainActivity : ComponentActivity() {
 
         return payload.toString()
     }
+
+
 
 
 

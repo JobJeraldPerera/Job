@@ -123,7 +123,7 @@ private fun insertAdminUsers(db: SQLiteDatabase) {
                 return deletedRows
         }
 
-        // Inside your DatabaseHelper class
+
         fun insertClassInstanceWithTeacher(classId: Long, date: String, teacher: String) {
                 val db = this.writableDatabase
                 val contentValues = ContentValues()
@@ -138,5 +138,5 @@ private fun insertAdminUsers(db: SQLiteDatabase) {
 
 
 
-        // Add other CRUD operations as needed
+
         }
